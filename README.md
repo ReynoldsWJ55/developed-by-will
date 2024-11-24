@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Developed by Will 🌐
 
-## Getting Started
+**A Showcase of My Web Development Skills**
 
-First, run the development server:
+Welcome to my portfolio repository! This project is a demonstration of my skills and capabilities as a web developer, built with modern tools and best practices. It represents my passion for creating responsive, accessible, and visually appealing web applications.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Project Highlights
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Framework**: Built with [Next.js](https://nextjs.org), leveraging server-side rendering (SSR) and static site generation (SSG) for performance and SEO.
+- **Responsive Design**: Fully optimized for all screen sizes, ensuring a seamless user experience across devices.
+- **Modern Styling**: Styled with [Tailwind CSS](https://tailwindcss.com), enabling rapid design iteration and consistent UI.
+- **Accessibility**: Adheres to web accessibility standards (WCAG), making the site user-friendly and inclusive.
+- **Performance Optimized**: Utilizes [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for efficient font loading, featuring the elegant [Geist](https://vercel.com/font).
+- **Deployment**: Hosted on [Azure Static Web Apps](https://azure.microsoft.com/products/app-service/static/) for fast and scalable global delivery.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Reusable Components**: Built with a modular approach, ensuring scalability and maintainability.
+- **Dynamic Content**: Pages designed to adapt to various data and user inputs.
+- **Minimalistic Design**: Focused on simplicity and clarity, emphasizing functionality and usability.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Technologies Used
 
-## Deploy on Vercel
+- **Frontend**:
+  - [Next.js](https://nextjs.org) (React Framework)
+  - [Tailwind CSS](https://tailwindcss.com) (Utility-first CSS Framework)
+- **Tooling**:
+  - ESLint, Prettier for clean and consistent code
+  - Git for version control
+- **Deployment**:
+  - [Azure Static Web Apps](https://azure.microsoft.com/products/app-service/static/) for hosting and CI/CD integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌎 View the Project
+
+Visit the live version: [Developed by Will](https://developedbywill.com)
+
+---
+
+## 📚 Learn More
+
+This repository showcases my approach to web development, focusing on:
+
+- Responsive design
+- Accessibility
+- Performance optimization
+- Code modularity
+
+For more about me and my work, feel free to connect via the links below!
+
+---
+
+## 🤝 Connect with Me
+
+I’m always open to discussions and collaborations. Let’s connect:
+
+- [LinkedIn](https://www.linkedin.com/in/reynoldswj/)
+- [GitHub](https://github.com/ReynoldsWJ55)
+
+---
+
+## © 2024 Developed by Will
+
+Crafted with care and dedication by [Will](https://developedbywill.com).
