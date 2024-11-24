@@ -45,18 +45,18 @@ export default function About() {
             </h1>
             <div className="prose prose-lg">
               <p className="text-gray-600 mb-4">
-                Hi, I'm Will! My web development journey began with CSS and
+                Hi, I&apos;m Will! My web development journey began with CSS and
                 SCSS, where I honed my skills in building clean, responsive
                 layouts. More recently, I've started exploring frameworks like
                 Bootstrap and Tailwind CSS to create scalable and modern
                 designs.
               </p>
               <p className="text-gray-600 mb-4">
-                While I’m still learning JavaScript and backend technologies
-                like Python and SQL, I bring strong attention to detail and a
-                passion for design to every project. I strive to build websites
-                that are not only functional but also user-friendly and visually
-                appealing.
+                While I&apos;m still learning JavaScript and backend
+                technologies like Python and SQL, I bring strong attention to
+                detail and a passion for design to every project. I strive to
+                build websites that are not only functional but also
+                user-friendly and visually appealing.
               </p>
             </div>
           </section>

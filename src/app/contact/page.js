@@ -35,7 +35,7 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        alert("Thanks for your message! I'll get back to you soon.");
+        alert("Thanks for your message! I&apos;ll get back to you soon.");
         setFormData({ name: "", email: "", message: "" });
       } else {
         alert("There was an error submitting the form. Please try again.");
@@ -54,7 +54,8 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Contact Me</h1>
           <p className="text-xl text-gray-600 mb-12">
-            Have a project in mind? Let's talk about how we can work together.
+            Have a project in mind? Let&apos;s talk about how we can work
+            together.
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -90,11 +91,12 @@ export default function Contact() {
 
               <div className="mt-12">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Let's Create Something Amazing
+                  Let&apos;s Create Something Amazing
                 </h2>
                 <p className="text-gray-600">
                   Whether you need a website, web application, or technical
-                  consultation, I'm here to help turn your ideas into reality.
+                  consultation, I&apos;m here to help turn your ideas into
+                  reality.
                 </p>
               </div>
             </div>
