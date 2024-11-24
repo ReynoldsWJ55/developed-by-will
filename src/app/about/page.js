@@ -47,8 +47,8 @@ export default function About() {
               <p className="text-gray-600 mb-4">
                 Hi, I&apos;m Will! My web development journey began with CSS and
                 SCSS, where I honed my skills in building clean, responsive
-                layouts. More recently, I've started exploring frameworks like
-                Bootstrap and Tailwind CSS to create scalable and modern
+                layouts. More recently, I&apos;ve started exploring frameworks
+                like Bootstrap and Tailwind CSS to create scalable and modern
                 designs.
               </p>
               <p className="text-gray-600 mb-4">
