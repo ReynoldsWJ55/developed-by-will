@@ -12,13 +12,7 @@ export default function Contact() {
     message: "",
   });
 
-  // Email Obfuscation Function
-  const obfuscatedEmail = () => {
-    const user = "Will";
-    const domain = "DevelopedbyWill.com";
-    return `${user}@${domain}`;
-  };
-
+  // Updated handleSubmit function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -35,10 +29,11 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        alert("Thanks for your message! I&apos;ll get back to you soon.");
+        alert("Thanks for your message! I'll get back to you soon.");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("There was an error submitting the form. Please try again.");
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error || "Unable to submit form."}`);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -68,12 +63,10 @@ export default function Contact() {
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 text-blue-600 mr-3" />
                   <a
-                    href={`mailto:${obfuscatedEmail()}`}
+                    href="mailto:Will@DevelopedbyWill.com"
                     className="text-gray-600 hover:text-blue-600 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
-                    {obfuscatedEmail()}
+                    Will@DevelopedbyWill.com
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -87,17 +80,6 @@ export default function Contact() {
                     github.com/ReynoldsWJ55
                   </a>
                 </div>
-              </div>
-
-              <div className="mt-12">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Let&apos;s Create Something Amazing
-                </h2>
-                <p className="text-gray-600">
-                  Whether you need a website, web application, or technical
-                  consultation, I&apos;m here to help turn your ideas into
-                  reality.
-                </p>
               </div>
             </div>
 
@@ -153,7 +135,7 @@ export default function Contact() {
                     id="message"
                     required
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-900 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
@@ -173,7 +155,6 @@ export default function Contact() {
           </div>
         </div>
       </main>
-      {/* Add Footer here */}
       <Footer />
     </div>
   );
