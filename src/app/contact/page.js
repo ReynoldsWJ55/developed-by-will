@@ -11,8 +11,8 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("");
 
-  // Email Obfuscation Function
   const obfuscatedEmail = () => {
     const user = "Will";
     const domain = "DevelopedbyWill.com";
@@ -21,28 +21,36 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("sending");
+
     try {
       const response = await fetch("https://formspree.io/f/xovqnnab", {
         method: "POST",
         headers: {
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
+        mode: "cors",
         body: JSON.stringify({
+          _subject: `New contact form submission from ${formData.name}`,
           name: formData.name,
           email: formData.email,
           message: formData.message,
+          _replyto: formData.email,
         }),
       });
 
       if (response.ok) {
-        alert("Thanks for your message! I&apos;ll get back to you soon.");
+        setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("There was an error submitting the form. Please try again.");
+        const errorData = await response.text();
+        console.error("Form submission failed:", response.status, errorData);
+        setStatus("error");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("There was an error submitting the form. Please try again.");
+      console.error("Form submission error:", error);
+      setStatus("error");
     }
   };
 
@@ -114,6 +122,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     value={formData.name}
@@ -133,6 +142,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="_replyto"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     value={formData.email}
@@ -151,9 +161,10 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-900 text-gray-900 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
@@ -163,17 +174,28 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full flex justify-center items-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+                  disabled={status === "sending"}
+                  className="w-full flex justify-center items-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-blue-400"
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  Send Message
+                  {status === "sending" ? "Sending..." : "Send Message"}
                 </button>
+
+                {status === "success" && (
+                  <p className="text-green-600 text-center mt-4">
+                    Thanks for your message! I&apos;ll get back to you soon.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-600 text-center mt-4">
+                    There was an error sending your message. Please try again.
+                  </p>
+                )}
               </form>
             </div>
           </div>
         </div>
       </main>
-      {/* Add Footer here */}
       <Footer />
     </div>
   );

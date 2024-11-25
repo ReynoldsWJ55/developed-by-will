@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import EmailObfuscation from "@/components/EmailObfuscation";
 import { Mail, Github, Send } from "lucide-react";
+import Image from "next/image";
 
 import { Terminal, Palette, Globe, Code } from "lucide-react";
 
@@ -40,24 +41,42 @@ export default function About() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Introduction */}
           <section className="mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center">
-              About Me
-            </h1>
-            <div className="prose prose-lg">
-              <p className="text-gray-600 mb-4">
-                Hi, I&apos;m Will! My web development journey began with CSS and
-                SCSS, where I honed my skills in building clean, responsive
-                layouts. More recently, I&apos;ve started exploring frameworks
-                like Bootstrap and Tailwind CSS to create scalable and modern
-                designs.
-              </p>
-              <p className="text-gray-600 mb-4">
-                While I&apos;m still learning JavaScript and backend
-                technologies like Python and SQL, I bring strong attention to
-                detail and a passion for design to every project. I strive to
-                build websites that are not only functional but also
-                user-friendly and visually appealing.
-              </p>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Text Content */}
+              <div>
+                <h1 className="text-4xl font-bold text-gray-900 mb-8">
+                  About Me
+                </h1>
+                <div className="prose prose-lg">
+                  <p className="text-gray-600 mb-4">
+                    Hi, I&apos;m Will! My web development journey began with CSS
+                    and SCSS, where I honed my skills in building clean,
+                    responsive layouts. More recently, I&apos;ve started
+                    exploring frameworks like Bootstrap and Tailwind CSS to
+                    create scalable and modern designs.
+                  </p>
+                  <p className="text-gray-600 mb-4">
+                    While I&apos;m still learning JavaScript and backend
+                    technologies like Python and SQL, I bring strong attention
+                    to detail and a passion for design to every project. I
+                    strive to build websites that are not only functional but
+                    also user-friendly and visually appealing.
+                  </p>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="flex justify-center">
+                <div className="relative w-80 h-80">
+                  <Image
+                    src="/images/will.jpg"
+                    alt="Will Reynolds"
+                    fill
+                    priority
+                    className="rounded-full object-cover object-top"
+                  />
+                </div>
+              </div>
             </div>
           </section>
 
