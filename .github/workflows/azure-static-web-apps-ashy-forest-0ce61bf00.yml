@@ -24,13 +24,11 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
       - name: Build
-        run: |
-          npm run build
-          cp -r public/* out/ || true
+        run: npm run build
 
       - name: Deploy
         id: builddeploy
@@ -40,8 +38,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"
-          api_location: "api"
           output_location: "out"
+          skip_api_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
