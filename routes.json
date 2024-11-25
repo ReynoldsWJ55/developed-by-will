@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/static/*",
+      "serve": "/static"
+    },
+    {
+      "route": "/_next/static/*",
+      "serve": "/_next/static"
+    }
+  ]
+}
