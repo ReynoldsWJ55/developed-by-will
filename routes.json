@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "route": "/about",
+      "serve": "/about.html"
+    },
+    {
+      "route": "/contact",
+      "serve": "/contact.html"
+    },
+    {
+      "route": "/projects",
+      "serve": "/projects.html"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html"
+    }
+  ]
+}
