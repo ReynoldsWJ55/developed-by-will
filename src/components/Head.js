@@ -39,6 +39,12 @@ export default function Head({ title, description, url, image }) {
 
       {/* Favicon */}
       <link rel="icon" href="/favicon.ico" />
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     </NextHead>
   );
 }

@@ -22,6 +22,14 @@ export default function Home() {
         description="Welcome to Developed by Will, a portfolio of modern web development projects and responsive designs."
         url="https://developedbywill.com"
         image="/images/home-og.jpg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          url: "https://developedbywill.com",
+          name: "Developed by Will",
+          description:
+            "A portfolio of modern web development projects and responsive designs.",
+        }}
       />
       <Navigation />
 

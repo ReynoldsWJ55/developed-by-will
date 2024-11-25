@@ -45,9 +45,24 @@ export default function Projects() {
       <Head
         title="Projects - Developed by Will"
         description="Explore Will's portfolio of projects, showcasing responsive, scalable, and modern web applications built using the latest technologies."
-        keywords="web development projects, modern design, portfolio, scalable applications, React projects, Next.js projects"
         url="https://developedbywill.com/projects"
         image="/images/projects-og.jpg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          url: "https://developedbywill.com/projects",
+          name: "Projects - Developed by Will",
+          description:
+            "A portfolio of responsive, scalable, and modern web applications built using the latest technologies.",
+          mainEntity: [
+            {
+              "@type": "CreativeWork",
+              name: "V Goal Visa Service",
+              description: "Expert visa consulting in Bangkok, Thailand.",
+              url: "https://vgoalvisaservice.com",
+            },
+          ],
+        }}
       />
       <Navigation />
       <main className="pt-24 pb-20">

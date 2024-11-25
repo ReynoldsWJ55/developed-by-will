@@ -48,9 +48,16 @@ export default function Contact() {
       <Head
         title="Contact - Developed by Will"
         description="Get in touch with Will for collaboration, inquiries, or to discuss your next web development project."
-        keywords="contact Will, collaborate with Will, inquiries, web development collaboration, portfolio inquiries"
         url="https://developedbywill.com/contact"
         image="/images/contact-og.jpg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          url: "https://developedbywill.com/contact",
+          name: "Contact Will Reynolds",
+          description:
+            "Use this page to contact Will Reynolds for web development inquiries or collaborations.",
+        }}
       />
       <Navigation />
       <main className="flex-grow pt-24 pb-20">
