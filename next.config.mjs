@@ -6,30 +6,12 @@ const nextConfig = {
     domains: ["developedbywill.com"],
   },
   trailingSlash: true,
-  // Add these optimizations while keeping your existing config
-  poweredByHeader: false,
-  generateEtags: true,
+  // Add production source maps for better error tracking
+  productionBrowserSourceMaps: true,
+  // Disable chunk optimization to see if it helps
   webpack: (config) => {
-    return {
-      ...config,
-      optimization: {
-        ...config.optimization,
-        splitChunks: {
-          chunks: "all",
-          minSize: 20000,
-          maxSize: 70000,
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            commons: {
-              name: "commons",
-              chunks: "all",
-              minChunks: 2,
-            },
-          },
-        },
-      },
-    };
+    config.optimization.splitChunks = false;
+    return config;
   },
 };
 
