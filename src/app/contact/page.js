@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Mail, Github, Send } from "lucide-react";
@@ -43,8 +44,14 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* SEO Metadata */}
+      <Head
+        title="Contact - Developed by Will"
+        description="Get in touch with Will for collaboration, inquiries, or to discuss your next web development project."
+        url="https://developedbywill.com/contact"
+        image="/images/contact-og.jpg"
+      />
       <Navigation />
-
       <main className="flex-grow pt-24 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">Contact Me</h1>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Terminal, Palette, Globe, Code } from "lucide-react";
@@ -44,8 +45,14 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Metadata */}
+      <Head
+        title="About - Developed by Will"
+        description="Learn more about Will, a passionate web developer with expertise in modern web technologies and responsive design."
+        url="https://developedbywill.com/about"
+        image="/images/about-og.jpg" // Optional: Add a custom image for the About page
+      />
       <Navigation />
-
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Introduction Section */}

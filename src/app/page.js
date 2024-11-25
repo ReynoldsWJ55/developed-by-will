@@ -1,3 +1,4 @@
+import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,13 @@ import {
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f8fafc]">
+      {/* SEO Metadata */}
+      <Head
+        title="Home - Developed by Will"
+        description="Welcome to Developed by Will, a portfolio of modern web development projects and responsive designs."
+        url="https://developedbywill.com"
+        image="/images/home-og.jpg"
+      />
       <Navigation />
 
       <main className="pt-16">

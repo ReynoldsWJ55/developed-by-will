@@ -1,3 +1,4 @@
+import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ExternalLink, Code, Globe, Palette, Terminal } from "lucide-react";
@@ -40,8 +41,14 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Metadata */}
+      <Head
+        title="Projects - Developed by Will"
+        description="Explore Will's portfolio of projects, showcasing responsive, scalable, and modern web applications built using the latest technologies."
+        url="https://developedbywill.com/projects"
+        image="/images/projects-og.jpg"
+      />
       <Navigation />
-
       <main className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
