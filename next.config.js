@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  assetPrefix: "/",
+  assetPrefix: process.env.NODE_ENV === "production" ? "" : "",
   webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
