@@ -45,6 +45,7 @@ export default function Projects() {
       <Head
         title="Projects - Developed by Will"
         description="Explore Will's portfolio of projects, showcasing responsive, scalable, and modern web applications built using the latest technologies."
+        keywords="web development projects, modern design, portfolio, scalable applications, React projects, Next.js projects"
         url="https://developedbywill.com/projects"
         image="/images/projects-og.jpg"
       />

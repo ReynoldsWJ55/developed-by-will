@@ -12,6 +12,10 @@ export default function Head({ title, description, url, image }) {
     <NextHead>
       <title>{title || defaultTitle}</title>
       <meta name="description" content={description || defaultDescription} />
+      <meta
+        name="keywords"
+        content="web development, portfolio, responsive design, modern web applications"
+      />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       {/* Open Graph (OG) Tags */}

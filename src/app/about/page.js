@@ -49,8 +49,9 @@ export default function About() {
       <Head
         title="About - Developed by Will"
         description="Learn more about Will, a passionate web developer with expertise in modern web technologies and responsive design."
+        keywords="Will Reynolds, web developer, about Will, portfolio, responsive design, web technologies"
         url="https://developedbywill.com/about"
-        image="/images/about-og.jpg" // Optional: Add a custom image for the About page
+        image="/images/about-og.jpg"
       />
       <Navigation />
       <main className="pt-24 pb-20">

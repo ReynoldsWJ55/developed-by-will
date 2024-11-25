@@ -48,6 +48,7 @@ export default function Contact() {
       <Head
         title="Contact - Developed by Will"
         description="Get in touch with Will for collaboration, inquiries, or to discuss your next web development project."
+        keywords="contact Will, collaborate with Will, inquiries, web development collaboration, portfolio inquiries"
         url="https://developedbywill.com/contact"
         image="/images/contact-og.jpg"
       />
