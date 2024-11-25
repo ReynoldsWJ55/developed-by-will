@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo } from "react";
 import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
@@ -8,13 +6,12 @@ import { Terminal, Palette, Globe, Code } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
-  // Refactored skills array
   const skills = useMemo(
     () => [
       {
         category: "Frontend Development",
         items: ["HTML", "CSS", "SCSS", "Bootstrap", "Tailwind CSS"],
-        icon: "Terminal", // String representation for the icon
+        icon: "Terminal",
       },
       {
         category: "Design & User Experience",
@@ -35,7 +32,6 @@ export default function About() {
     []
   );
 
-  // Map of icons for dynamic rendering
   const iconComponents = {
     Terminal: <Terminal className="w-8 h-8 text-blue-600" />,
     Palette: <Palette className="w-8 h-8 text-purple-600" />,
@@ -45,7 +41,6 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* SEO Metadata */}
       <Head
         title="About - Developed by Will"
         description="Learn more about Will, a passionate web developer with expertise in modern web technologies and responsive design."
@@ -67,7 +62,6 @@ export default function About() {
           {/* Introduction Section */}
           <section className="mb-16 text-center">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Text Content */}
               <div>
                 <h1 className="text-4xl font-bold text-gray-900 mb-8">
                   About Me
@@ -90,15 +84,14 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Image Section */}
               <div className="flex justify-center">
-                <div className="relative w-80 h-80">
+                <div className="relative w-80 h-80 rounded-full overflow-hidden">
                   <Image
-                    src="/images/will.jpg"
-                    alt="Will Reynolds"
+                    src="/images/about-image.jpg"
+                    alt="About Will Reynolds"
                     fill
+                    className="object-cover object-[center_40%]" /* Added object-position */
                     priority
-                    className="rounded-full object-cover object-top"
                   />
                 </div>
               </div>
@@ -110,7 +103,7 @@ export default function About() {
             <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
               Skills & Technologies
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {skills.map((skillSet) => (
                 <div
                   key={skillSet.category}
@@ -122,7 +115,7 @@ export default function About() {
                       {skillSet.category}
                     </h3>
                   </div>
-                  <ul className="mt-2 space-y-2 text-gray-600">
+                  <ul className="mt-2 space-y-2 text-gray-600 md:pl-8 md:text-left text-center">
                     {skillSet.items.map((item) => (
                       <li key={item}>
                         <span className="text-blue-500 mr-2">•</span>
@@ -136,7 +129,6 @@ export default function About() {
           </section>
         </div>
       </main>
-
       <Footer />
     </div>
   );
