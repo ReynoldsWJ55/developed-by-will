@@ -1,17 +1,23 @@
 {
   "routes": [
     {
-      "route": "/*",
-      "serve": "/index.html",
-      "statusCode": 200
+      "route": "/_next/static/*",
+      "serve": "/_next/static",
+      "headers": {
+        "Cache-Control": "max-age=31536000"
+      }
     },
     {
       "route": "/static/*",
-      "serve": "/static"
+      "serve": "/static",
+      "headers": {
+        "Cache-Control": "max-age=31536000"
+      }
     },
     {
-      "route": "/_next/static/*",
-      "serve": "/_next/static"
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
     }
   ]
 }
