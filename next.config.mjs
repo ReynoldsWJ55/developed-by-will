@@ -6,12 +6,7 @@ const nextConfig = {
     domains: ["developedbywill.com"],
   },
   trailingSlash: true,
-  // Remove assetPrefix as it might cause issues with static file paths
-  experimental: {
-    optimizeCss: true,
-  },
-  // Add this to ensure static files are copied correctly
-  distDir: "out",
+  // Removed experimental.optimizeCss
 };
 
 export default nextConfig;
