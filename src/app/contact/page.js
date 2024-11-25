@@ -13,27 +13,59 @@ export default function Contact() {
     message: "",
   });
 
-  // Updated handleSubmit function
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
+      const formDataToSend = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      };
+
+      console.log("Sending data:", formDataToSend);
+
       const response = await fetch("https://formspree.io/f/xovqnnab", {
         method: "POST",
-        body: formDataObj,
-        // Remove the Content-Type header - let the browser set it automatically
-        // for FormData with the correct boundary
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataToSend),
       });
+
+      console.log("Response status:", response.status);
+
+      // Check if the response has content before trying to parse it
+      const contentType = response.headers.get("content-type");
+      let responseData = {};
+
+      if (contentType && contentType.includes("application/json")) {
+        responseData = await response.json();
+        console.log("Response data:", responseData);
+      }
 
       if (response.ok) {
         alert("Thanks for your message! I'll get back to you soon.");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        const errorData = await response.json();
-        alert(`Error: ${errorData.error || "Unable to submit form."}`);
+        if (response.status === 400) {
+          alert("Please make sure all fields are filled out correctly.");
+        } else if (response.status === 429) {
+          alert("Too many submissions. Please try again later.");
+        } else {
+          alert("There was an error submitting the form. Please try again.");
+        }
+        console.error("Form submission failed:", {
+          status: response.status,
+          data: responseData,
+        });
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("There was an error submitting the form. Please try again.");
+      console.error("Network error:", error);
+      alert(
+        "Unable to connect to the server. Please check your internet connection and try again."
+      );
     }
   };
 
@@ -106,6 +138,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     value={formData.name}
@@ -125,6 +158,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
                     value={formData.email}
@@ -143,6 +177,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
