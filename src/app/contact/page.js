@@ -13,65 +13,8 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const formDataToSend = {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      };
-
-      console.log("Sending data:", formDataToSend);
-
-      const response = await fetch("https://formspree.io/f/xovqnnab", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formDataToSend),
-      });
-
-      console.log("Response status:", response.status);
-
-      // Check if the response has content before trying to parse it
-      const contentType = response.headers.get("content-type");
-      let responseData = {};
-
-      if (contentType && contentType.includes("application/json")) {
-        responseData = await response.json();
-        console.log("Response data:", responseData);
-      }
-
-      if (response.ok) {
-        alert("Thanks for your message! I'll get back to you soon.");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        if (response.status === 400) {
-          alert("Please make sure all fields are filled out correctly.");
-        } else if (response.status === 429) {
-          alert("Too many submissions. Please try again later.");
-        } else {
-          alert("There was an error submitting the form. Please try again.");
-        }
-        console.error("Form submission failed:", {
-          status: response.status,
-          data: responseData,
-        });
-      }
-    } catch (error) {
-      console.error("Network error:", error);
-      alert(
-        "Unable to connect to the server. Please check your internet connection and try again."
-      );
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* SEO Metadata */}
       <Head
         title="Contact - Developed by Will"
         description="Get in touch with Will for collaboration, inquiries, or to discuss your next web development project."
@@ -127,7 +70,11 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="bg-white rounded-lg shadow-sm p-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://formspree.io/f/xovqnnab"
+                method="POST"
+                className="space-y-6"
+              >
                 <div>
                   <label
                     htmlFor="name"
@@ -141,10 +88,6 @@ export default function Contact() {
                     name="name"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
                   />
                 </div>
 
@@ -161,10 +104,6 @@ export default function Contact() {
                     name="email"
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
                   />
                 </div>
 
@@ -181,10 +120,6 @@ export default function Contact() {
                     required
                     rows={4}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md text-gray-900 focus:ring-blue-500 focus:border-blue-500"
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
                   />
                 </div>
 
