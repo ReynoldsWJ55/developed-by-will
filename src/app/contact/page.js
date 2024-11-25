@@ -19,14 +19,9 @@ export default function Contact() {
     try {
       const response = await fetch("https://formspree.io/f/xovqnnab", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        }),
+        body: formDataObj,
+        // Remove the Content-Type header - let the browser set it automatically
+        // for FormData with the correct boundary
       });
 
       if (response.ok) {
