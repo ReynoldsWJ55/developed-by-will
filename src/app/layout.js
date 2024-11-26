@@ -12,9 +12,39 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+export const metadata = {
+  title: "Developed by Will | Web Developer, Designer, and Marketer",
+  description:
+    "Professional web developer specializing in creating innovative web solutions with clean code and thoughtful design. Expert in UI/UX, digital marketing, and DevOps.",
+  keywords:
+    "web development, UI/UX design, digital marketing, DevOps, web developer",
+  icons: {
+    icon: "/images/favicon.ico",
+    shortcut: "/images/favicon-16x16.png",
+    apple: "/images/apple-touch-icon.png",
+  },
+  themeColor: "#209CEE",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          data-domain="developedbywill.com"
+          src="https://plausible.io/js/script.outbound-links.js"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible = window.plausible || function() {
+                (window.plausible.q = window.plausible.q || []).push(arguments)
+              }
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -23,10 +53,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-export const metadata = {
-  title: "Developed by Will | Web Developer, Designer, and Marketer",
-  description:
-    "Professional web developer specializing in creating innovative web solutions with clean code and thoughtful design. Expert in UI/UX, digital marketing, and DevOps.",
-  keywords:
-    "web development, UI/UX design, digital marketing, DevOps, web developer",
-};
