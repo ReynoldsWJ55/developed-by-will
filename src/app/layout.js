@@ -1,5 +1,7 @@
+// src/components/analytics/PlausibleProvider.js
 import localFont from "next/font/local";
 import "./globals.css";
+import PlausibleProvider from "../components/analytics/PlausibleProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +25,9 @@ export const metadata = {
     shortcut: "/images/favicon-16x16.png",
     apple: "/images/apple-touch-icon.png",
   },
+};
+
+export const viewport = {
   themeColor: "#209CEE",
 };
 
@@ -33,7 +38,7 @@ export default function RootLayout({ children }) {
         <script
           defer
           data-domain="developedbywill.com"
-          src="https://plausible.io/js/script.outbound-links.js"
+          src="https://analytics.developedbywill.com/js/script.js"
         ></script>
         <script
           dangerouslySetInnerHTML={{
