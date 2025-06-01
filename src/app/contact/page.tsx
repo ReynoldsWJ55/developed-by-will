@@ -55,14 +55,10 @@ export default function Contact() {
   // Load reCAPTCHA script
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js?render=6LdNA1IrAAAAAP-5ttsUTAjBvJB9mGOvJRVNUvr';
+    script.src = 'https://www.google.com/recaptcha/api.js?render=6LdNA1IrAAAAAP-5ttsUTAjBvJB9mGOvJRVNUvrG';
     script.async = true;
     script.defer = true;
     script.onload = () => setRecaptchaLoaded(true);
-    script.onerror = () => {
-      console.error('Failed to load reCAPTCHA script');
-      setRecaptchaLoaded(false);
-    };
     document.head.appendChild(script);
 
     return () => {
@@ -81,16 +77,14 @@ export default function Contact() {
   };
 
   const executeRecaptcha = async (): Promise<string | null> => {
-    if (!recaptchaLoaded || !window.grecaptcha) {
-      console.warn('reCAPTCHA not loaded, skipping verification');
+    if (!window.grecaptcha) {
       return null;
     }
 
     try {
-      const token = await window.grecaptcha.execute('6LdNA1IrAAAAAP-5ttsUTAjBvJB9mGOvJRVNUvr', {
+      const token = await window.grecaptcha.execute('6LdNA1IrAAAAAP-5ttsUTAjBvJB9mGOvJRVNUvrG', {
         action: 'contact_form'
       });
-      console.log('reCAPTCHA token generated successfully');
       return token;
     } catch (error) {
       console.error('reCAPTCHA execution failed:', error);
@@ -118,15 +112,10 @@ export default function Contact() {
       // Add honeypot field to help with spam prevention
       formDataToSubmit.append('_gotcha', '');
 
-      // Execute reCAPTCHA and add if available
-      try {
-        const recaptchaToken = await executeRecaptcha();
-        if (recaptchaToken) {
-          formDataToSubmit.append('g-recaptcha-response', recaptchaToken);
-          console.log('reCAPTCHA token added to form submission');
-        }
-      } catch (recaptchaError) {
-        console.warn('reCAPTCHA failed, proceeding without it:', recaptchaError);
+      // Execute reCAPTCHA and add token
+      const recaptchaToken = await executeRecaptcha();
+      if (recaptchaToken) {
+        formDataToSubmit.append('g-recaptcha-response', recaptchaToken);
       }
 
       // Submit to Formspree
@@ -166,29 +155,8 @@ export default function Contact() {
         let errorResult;
         try {
           errorResult = await response.json();
-          console.error('Formspree error response:', errorResult);
         } catch (jsonError) {
-          console.error('Failed to parse error response as JSON');
           errorResult = { error: `HTTP ${response.status}: ${response.statusText}` };
-        }
-        
-        // If Formspree fails due to reCAPTCHA, offer email fallback
-        if (errorResult.error?.includes('reCAPTCHA') || errorResult.error?.includes('recaptcha')) {
-          const emailSubject = encodeURIComponent(`Contact from ${formData.name} - ${formData.company || 'Web Inquiry'}`);
-          const emailBody = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`);
-          const mailtoLink = `mailto:will@developedbywill.com?subject=${emailSubject}&body=${emailBody}`;
-          
-          setStatus({
-            type: 'error',
-            message: 'Form submission requires verification. Would you like to send via email instead?'
-          });
-          
-          // Show email fallback option
-          const sendViaEmail = window.confirm('The contact form requires additional verification. Would you like to open your email client to send the message instead?');
-          if (sendViaEmail) {
-            window.location.href = mailtoLink;
-            return;
-          }
         }
         
         throw new Error(errorResult.error || errorResult.errors?.[0]?.message || `Form submission failed (${response.status})`);
@@ -199,9 +167,7 @@ export default function Contact() {
       
       setStatus({
         type: 'error',
-        message: errorMessage.includes('Failed to fetch') 
-          ? 'Network error. Please check your connection and try again, or email me directly at will@developedbywill.com'
-          : `Failed to send message: ${errorMessage}. Please try again or email me directly at will@developedbywill.com`
+        message: `Failed to send message: ${errorMessage}. Please try again or email me directly at will@developedbywill.com`
       });
     }
   };
