@@ -1,0 +1,27 @@
+# HUMANS.TXT
+
+/* TEAM */
+Business Development & Strategy: Will Reynolds
+Contact: will [at] developedbywill.com
+Twitter: @willreynolds
+LinkedIn: linkedin.com/in/reynoldswj/
+Location: Bangkok, Thailand
+
+/* THANKS */
+Next.js Team
+Vercel Team
+Tailwind CSS Team
+Framer Motion Team
+Open Source Community
+
+/* SITE */
+Last update: 2025/01/06
+Language: English
+Doctype: HTML5
+IDE: VS Code
+Standards: HTML5, CSS3, TypeScript
+Components: React, Next.js 15
+Styling: Tailwind CSS
+Animations: Framer Motion
+Analytics: Plausible
+Deployment: Vercel

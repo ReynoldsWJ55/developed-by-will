@@ -1,7 +1,15 @@
 import React from "react";
 import NextHead from "next/head";
 
-export default function Head({ title, description, url, image, jsonLd }) {
+interface HeadProps {
+  title?: string;
+  description?: string;
+  url?: string;
+  image?: string;
+  jsonLd?: Record<string, any>;
+}
+
+export default function Head({ title, description, url, image, jsonLd }: HeadProps) {
   const defaultTitle = "Developed by Will - Portfolio";
   const defaultDescription =
     "A web development portfolio showcasing responsive, modern designs.";

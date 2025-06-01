@@ -1,77 +1,53 @@
-# Developed by Will 🌐
+# Will Reynolds - Business Development & Marketing Strategy
 
-**A Showcase of My Web Development Skills**
+Strategic business development and marketing consultant specializing in Thailand market expansion and ASEAN growth strategies.
 
-Welcome to my portfolio repository! This project highlights my expertise in modern web development, showcasing responsive, accessible, and visually appealing web applications. It represents my passion for creating high-quality, user-focused solutions using cutting-edge tools and best practices.
+## 🌏 About
 
----
+Will Reynolds is a business development and operations leader with 20+ years of global experience, based in Bangkok, Thailand for 5+ years. Specializing in helping international businesses navigate Thailand's dynamic business landscape through strategic marketing, operational excellence, and cross-cultural stakeholder engagement.
 
-## ✨ Project Highlights
+## 🎯 Core Services
 
-- **Framework**: Built with [Next.js](https://nextjs.org), leveraging server-side rendering (SSR), static site generation (SSG), and optimized routing for exceptional performance and SEO.
-- **Responsive Design**: Fully optimized for all screen sizes, ensuring a seamless experience across desktops, tablets, and mobile devices.
-- **Modern Styling**: Styled with [Tailwind CSS](https://tailwindcss.com), enabling rapid design iteration and a consistent, clean UI.
-- **Accessibility**: Adheres to web accessibility standards (WCAG), ensuring the site is user-friendly and inclusive for all.
-- **Performance Optimization**: Utilizes [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for efficient font loading, featuring the elegant [Geist](https://vercel.com/font).
-- **Hosting**: Deployed on [Vercel](https://vercel.com) for fast, scalable, and globally distributed delivery with built-in SSL.
+- **Business Development**: Market entry strategy, partnership development, ASEAN expansion
+- **Marketing Strategy**: Customer acquisition, content marketing, brand positioning  
+- **Operations Excellence**: Digital transformation, analytics, process optimization
+- **Technical Implementation**: Website development, marketing automation, analytics setup
 
----
+## 🚀 Featured Projects
 
-## 📂 Key Features
+### V Goal Visa Service
+Complete digital transformation for Bangkok's leading visa consultancy with bilingual platform and strategic marketing.
+- **Result**: 300% increase in online inquiries
+- **Technologies**: Next.js, Bilingual SEO, Vercel CI/CD
 
-- **Reusable Components**: Built with a modular approach, ensuring scalability, maintainability, and ease of updates.
-- **Dynamic Content**: Pages designed to adapt dynamically to user input and changing data.
-- **Minimalistic Design**: Focused on simplicity and clarity, prioritizing functionality and usability without sacrificing aesthetics.
-- **CI/CD Integration**: Integrated with GitHub for continuous integration and deployment workflows.
+### WJR Visuals Portfolio  
+High-performance photography portfolio engineered for speed and visual impact.
+- **Result**: 50% faster load times
+- **Technologies**: Performance Engineering, Image Optimization
 
----
+### Thailand Wanderer
+Strategic content platform for Thailand travel market through authentic storytelling.
+- **Result**: 200% content growth
+- **Technologies**: Content Strategy, Market Research, SEO
 
-## 🛠 Technologies Used
+## 🛠 Tech Stack
 
-### **Frontend**
+- **Framework**: Next.js 15 with Turbopack
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + Framer Motion
+- **Deployment**: Vercel
+- **Analytics**: Plausible
 
-- [Next.js](https://nextjs.org) (React Framework)
-- [Tailwind CSS](https://tailwindcss.com) (Utility-first CSS Framework)
+## 📍 Location
 
-### **Tooling**
+Bangkok, Thailand • ASEAN Market Expert
 
-- ESLint, Prettier (Code linting and formatting)
-- Git & GitHub (Version control)
+## 🔗 Links
 
-### **Deployment**
-
-- [Vercel](https://vercel.com) (Hosting and CI/CD)
-
----
-
-## 🌎 View the Project
-
-Check out the live site here: [Developed by Will](https://developedbywill.com)
-
----
-
-## 📚 About This Project
-
-This repository is a demonstration of my approach to modern web development, focusing on:
-
-- Responsive design principles
-- Web accessibility
-- Performance optimization
-- Code modularity for easy scalability
-
-Feel free to explore the code and reach out if you have any questions or feedback!
+- **Website**: [developedbywill.com](https://developedbywill.com)
+- **LinkedIn**: [linkedin.com/in/reynoldswj/](https://www.linkedin.com/in/reynoldswj/)
+- **Email**: will@developedbywill.com
 
 ---
 
-## 🤝 Connect with Me
-
-I’m always open to collaboration, discussions, or opportunities to contribute to exciting projects. Let’s connect:
-
-- [LinkedIn](https://www.linkedin.com/in/reynoldswj/)
-- [GitHub](https://github.com/ReynoldsWJ55)
-
----
-
-## © 2024 Developed by Will
-
-Crafted with care and dedication by [Will](https://developedbywill.com).
+*Business Growth in Thailand & ASEAN*

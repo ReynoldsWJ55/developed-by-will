@@ -17,8 +17,8 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
-    const closeMenu = (e) => {
-      if (isMenuOpen && !e.target.closest("nav")) {
+    const closeMenu = (e: MouseEvent) => {
+      if (isMenuOpen && !(e.target as Element)?.closest("nav")) {
         setIsMenuOpen(false);
       }
     };
@@ -70,7 +70,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent) => {
               e.stopPropagation();
               setIsMenuOpen(!isMenuOpen);
             }}

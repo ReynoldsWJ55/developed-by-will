@@ -1,0 +1,20 @@
+Contact: mailto:will@developedbywill.com
+Contact: https://developedbywill.com/contact
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://developedbywill.com/.well-known/security.txt
+
+# Security Policy
+
+This website is a business portfolio and consultancy site for Will Reynolds.
+
+For security issues or vulnerabilities, please contact:
+- Email: will@developedbywill.com
+- Contact Form: https://developedbywill.com/contact
+
+Please include:
+- Description of the vulnerability
+- Steps to reproduce
+- Your contact information
+
+We appreciate responsible disclosure and will respond promptly to legitimate security concerns.
