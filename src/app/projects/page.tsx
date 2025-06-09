@@ -143,8 +143,8 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Head
-        title="Thailand Business Development Projects | Will Reynolds Portfolio"
-        description="Strategic business development and marketing projects in Thailand: V Goal Visa Service digital transformation, WJR Visuals performance optimization, and Thailand Wanderer market research. Real results in ASEAN markets."
+        title="Thailand Business Consulting Case Studies | Will Reynolds Portfolio Bangkok"
+        description="Proven Thailand business expansion results: 300% growth for V Goal Visa Service, high-performance WJR Visuals portfolio, Thailand Wanderer content strategy. Real market entry success stories in Bangkok and ASEAN."
         url="https://developedbywill.com/projects"
         image="/images/projects-og.jpg"
         jsonLd={{

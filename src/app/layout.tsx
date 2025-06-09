@@ -15,22 +15,27 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Will Reynolds | Business Development & Marketing Strategy in Thailand",
-    template: "%s | Will Reynolds"
+    default: "Thailand Business Consultant Bangkok | Will Reynolds | ASEAN Market Expansion Expert",
+    template: "%s | Will Reynolds - Thailand Business Expert"
   },
   description:
-    "Strategic business development and marketing expert with 20+ years global experience. Specializing in Thailand market expansion, ASEAN growth strategies, and digital transformation for international businesses.",
+    "Thailand business consultant with global experience helping international companies expand in Bangkok and ASEAN markets. Expert in market entry strategy, digital transformation, and cross-cultural business development based in Thailand.",
   keywords: [
-    "Thailand business development",
-    "ASEAN market expansion", 
-    "Bangkok business consultant",
-    "Thailand marketing strategy",
-    "Southeast Asia business growth",
-    "international business Thailand",
-    "cross-cultural business development",
-    "Thailand market entry",
-    "ASEAN business strategy",
-    "Bangkok MBA consultant"
+    "Thailand business consultant Bangkok",
+    "ASEAN market expansion expert", 
+    "Bangkok business development consultant",
+    "Thailand market entry strategy",
+    "international business consultant Thailand",
+    "cross-cultural business development ASEAN",
+    "Thailand digital transformation consultant",
+    "Bangkok marketing strategy expert",
+    "Southeast Asia business growth consultant",
+    "Thailand market research consultant",
+    "ASEAN business strategy advisor",
+    "Bangkok international business expert",
+    "how to enter Thailand market",
+    "Thailand business expansion services",
+    "ASEAN market entry consulting"
   ],
   authors: [{ name: "Will Reynolds", url: "https://developedbywill.com" }],
   creator: "Will Reynolds",
@@ -45,9 +50,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://developedbywill.com",
-    siteName: "Will Reynolds - Business Development & Marketing Strategy",
-    title: "Will Reynolds | Business Development & Marketing Strategy in Thailand",
-    description: "Strategic business development and marketing expert with 20+ years global experience. Specializing in Thailand market expansion and ASEAN growth strategies.",
+    siteName: "Will Reynolds - Thailand Business Consultant Bangkok",
+    title: "Thailand Business Consultant Bangkok | Will Reynolds | ASEAN Market Expert",
+    description: "Expert Thailand business consultant with global experience helping international companies expand in Bangkok and ASEAN markets. Specializing in market entry, digital transformation, and strategic growth.",
     images: [
       {
         url: "/images/og-home.jpg",
@@ -59,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Will Reynolds | Business Development & Marketing Strategy in Thailand",
-    description: "Strategic business development and marketing expert with 20+ years global experience. Specializing in Thailand market expansion and ASEAN growth strategies.",
+    title: "Thailand Business Consultant Bangkok | Will Reynolds | ASEAN Market Expert",
+    description: "Expert Thailand business consultant with global experience helping international companies expand in Bangkok and ASEAN markets. Specializing in market entry, digital transformation, and strategic growth.",
     images: ["/images/twitter-card.jpg"],
     creator: "@willreynolds",
   },

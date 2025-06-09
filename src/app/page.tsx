@@ -20,15 +20,15 @@ import {
 const services = [
   {
     icon: Building2,
-    title: "Business Development",
-    description: "Strategic market expansion and partnership development across Thailand and ASEAN markets",
-    features: ["Market entry strategy", "Partnership development", "Cross-cultural engagement"],
+    title: "Thailand Market Entry",
+    description: "Strategic Thailand business expansion and partnership development for international companies entering Bangkok and ASEAN markets",
+    features: ["Thailand market entry strategy", "Local partnership development", "Cross-cultural stakeholder engagement"],
   },
   {
     icon: TrendingUp,
-    title: "Marketing Strategy",
-    description: "Data-driven customer acquisition and brand positioning for competitive markets",
-    features: ["Organic marketing", "Content strategy", "Customer acquisition"],
+    title: "Thailand Marketing Strategy",
+    description: "Data-driven customer acquisition and brand positioning strategies tailored for Thailand market and Thai consumer behavior",
+    features: ["Thailand SEO & digital marketing", "Thai content strategy", "Local customer acquisition"],
   },
   {
     icon: BarChart3,
@@ -45,8 +45,8 @@ const services = [
 ];
 
 const achievements = [
-  { number: "20+", label: "Years Experience" },
   { number: "5+", label: "Years in Thailand" },
+  { number: "Global", label: "Business Experience" },
   { number: "300%", label: "Average Growth" },
 ];
 
@@ -115,8 +115,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Head
-        title="Will Reynolds | Business Development & Marketing Strategy in Thailand"
-        description="Strategic business development and marketing expert with 20+ years global experience. Specializing in Thailand market expansion, ASEAN growth strategies, and digital transformation for international businesses."
+        title="Will Reynolds | Thailand Business Consultant Bangkok | ASEAN Market Expert"
+        description="Thailand business consultant with global experience helping international companies expand in Bangkok and ASEAN markets. Expert in market entry strategy, digital transformation, and cross-cultural business development."
         url="https://developedbywill.com"
         image="/images/og-home.jpg"
         jsonLd={{
@@ -131,7 +131,7 @@ export default function Home() {
             "https://github.com/ReynoldsWJ55"
           ],
           jobTitle: "Business Development & Marketing Strategy Consultant",
-          description: "Strategic business development and marketing expert with 20+ years global experience, specializing in Thailand market expansion and ASEAN growth strategies.",
+          description: "Business development and marketing expert with global experience, specializing in Thailand market expansion and ASEAN growth strategies.",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Bangkok",
@@ -192,14 +192,14 @@ export default function Home() {
                 className="mb-8"
               >
                 <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-                  Business Growth in
+                  Thailand Business Consultant
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-                    Thailand & ASEAN
+                    Bangkok & ASEAN Expert
                   </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-                  Strategic business development and marketing expertise for market expansion across Southeast Asia. 
-                  20+ years global experience with deep Thailand market knowledge.
+                  Expert Thailand market entry consulting for international businesses expanding into Bangkok and ASEAN markets. 
+                  Global business experience with proven Thailand market development results.
                 </p>
               </motion.div>
 
@@ -256,10 +256,10 @@ export default function Home() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Strategic Market Expansion
+                Thailand Market Entry Services
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive business development and marketing strategies tailored for success in Thailand and Southeast Asian markets.
+                Proven business development and marketing strategies helping international companies successfully enter and expand in Bangkok, Thailand, and ASEAN markets.
               </p>
             </motion.div>
 

@@ -56,13 +56,13 @@ const expertise: Expertise[] = [
 
 const achievements = [
   {
-    icon: Briefcase,
-    number: "20+",
-    label: "Years Experience",
-    description: "Global business and operations leadership"
+    icon: Globe,
+    number: "Global",
+    label: "Business Experience",
+    description: "International operations and leadership background"
   },
   {
-    icon: Globe,
+    icon: Briefcase,
     number: "5+",
     label: "Years in Thailand",
     description: "Deep understanding of ASEAN markets"
@@ -88,8 +88,8 @@ export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Head
-        title="About Will Reynolds | 20+ Years Thailand Business Development Expert"
-        description="Will Reynolds: 20+ years global business leader, 5+ years Bangkok resident, MBA candidate. Expert in Thailand market expansion, ASEAN business growth, and cross-cultural stakeholder engagement."
+        title="About Will Reynolds | Thailand Business Consultant Bangkok | Global ASEAN Expert"
+        description="Meet Will Reynolds: Leading Thailand business consultant with global experience helping international companies succeed in Bangkok and ASEAN markets. Expert in market entry, cross-cultural business development, and digital transformation."
         url="https://developedbywill.com/about"
         image="/images/about-og.jpg"
         jsonLd={{
@@ -105,7 +105,7 @@ export default function About() {
             name: "Will Reynolds",
             alternateName: "William Reynolds",
             jobTitle: "Business Development & Marketing Strategy Consultant",
-            description: "Business development and marketing strategy expert with 20+ years global experience, specializing in Thailand market expansion and ASEAN growth strategies.",
+            description: "Business development and marketing strategy expert with global experience, specializing in Thailand market expansion and ASEAN growth strategies.",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Bangkok",
@@ -140,7 +140,7 @@ export default function About() {
                 "@type": "City",
                 name: "Bangkok, Thailand"
               },
-              experienceRequirements: "20+ years global business experience",
+              experienceRequirements: "Global business experience with Thailand market expertise",
               skills: [
                 "Market Entry Strategy",
                 "Partnership Development", 
@@ -177,10 +177,10 @@ export default function About() {
                 </h1>
                 <div className="prose prose-lg text-left">
                   <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                    I&apos;m <strong>Will</strong> — a business development and operations leader with over 20 years of global experience, specializing in driving growth across Thailand and Southeast Asian markets.
+                    I&apos;m <strong>Will</strong> — a business development expert with global experience, specializing in driving growth across Thailand and Southeast Asian markets.
                   </p>
                   <p className="text-lg text-gray-600 mb-6">
-                    Based in <strong>Bangkok for 5+ years</strong>, I combine deep regional market knowledge with proven business development strategies. I help organizations navigate Thailand&apos;s dynamic business landscape through strategic marketing, operational excellence, and cross-cultural stakeholder engagement.
+                    Based in <strong>Bangkok for 5+ years</strong>, I combine deep regional market knowledge with international business expertise. I help organizations navigate Thailand&apos;s dynamic business landscape through strategic marketing, operational excellence, and cross-cultural stakeholder engagement.
                   </p>
                   <p className="text-lg text-gray-600">
                     I&apos;m expanding my expertise in digital business transformation and marketing strategy to help businesses thrive in Southeast Asia&apos;s fast-evolving markets.

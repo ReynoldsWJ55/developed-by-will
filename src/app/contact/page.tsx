@@ -175,8 +175,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <Head
-        title="Contact Will Reynolds | Thailand Business Development Consultant Bangkok"
-        description="Contact Will Reynolds for Thailand market expansion and ASEAN business development. 20+ years global experience, 5+ years Bangkok resident. Business development consultant specializing in international growth strategies."
+        title="Hire Thailand Business Consultant | Contact Will Reynolds Bangkok | Free Consultation"
+        description="Get expert Thailand market entry advice from Will Reynolds, Bangkok-based business expansion consultant with global experience. Free consultation for international companies entering Thailand and ASEAN markets. 24-hour response guaranteed."
         url="https://developedbywill.com/contact"
         image="/images/contact-og.jpg"
         jsonLd={{
