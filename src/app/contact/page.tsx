@@ -52,10 +52,14 @@ export default function Contact() {
 
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
 
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '';
+
   // Load reCAPTCHA script
   useEffect(() => {
+    if (!recaptchaSiteKey) return;
+
     const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js?render=6LdNA1IrAAAAAP-5ttsUTAjBvJB9mGOvJRVNUvrG';
+    script.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
     script.async = true;
     script.defer = true;
     script.onload = () => setRecaptchaLoaded(true);
@@ -66,7 +70,7 @@ export default function Contact() {
         document.head.removeChild(script);
       }
     };
-  }, []);
+  }, [recaptchaSiteKey]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -77,12 +81,12 @@ export default function Contact() {
   };
 
   const executeRecaptcha = async (): Promise<string | null> => {
-    if (!window.grecaptcha) {
+    if (!window.grecaptcha || !recaptchaSiteKey) {
       return null;
     }
 
     try {
-      const token = await window.grecaptcha.execute('6LdNA1IrAAAAAP-5ttsUTAjBvJB9mGOvJRVNUvrG', {
+      const token = await window.grecaptcha.execute(recaptchaSiteKey, {
         action: 'contact_form'
       });
       return token;
@@ -173,10 +177,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       <Head
         title="Hire Thailand Business Consultant | Contact Will Reynolds Bangkok | Free Consultation"
-        description="Get expert Thailand market entry advice from Will Reynolds, Bangkok-based business expansion consultant with global experience. Free consultation for international companies entering Thailand and ASEAN markets. 24-hour response guaranteed."
+        description="Get expert Thailand market entry advice from Will Reynolds in Bangkok. Free consultation for international companies entering Thailand and ASEAN markets."
         url="https://developedbywill.com/contact"
         image="/images/contact-og.jpg"
         jsonLd={{
@@ -240,7 +244,7 @@ export default function Contact() {
       />
       <Navigation />
       
-      <main className="pt-24 pb-20">
+      <main id="main-content" className="pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.div
@@ -251,7 +255,7 @@ export default function Contact() {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Let&apos;s Build Something
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              <span className="block premium-gradient-text">
                 Extraordinary
               </span>
             </h1>
@@ -269,21 +273,21 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-1"
             >
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="premium-card p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-8">
                   Get In Touch
                 </h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                      <Mail className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                      <Mail className="w-6 h-6 text-brand-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                       <a
                         href="mailto:will@developedbywill.com"
-                        className="text-gray-600 hover:text-blue-600 transition-colors"
+                        className="text-gray-600 hover:text-brand-600 transition-colors"
                       >
                         will@developedbywill.com
                       </a>
@@ -291,8 +295,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-gold-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-gold-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Location</h3>
@@ -301,8 +305,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                      <Clock className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 bg-navy-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                      <Clock className="w-6 h-6 text-navy-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Response Time</h3>
@@ -311,8 +315,8 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                      <Globe className="w-6 h-6 text-orange-600" />
+                    <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                      <Globe className="w-6 h-6 text-brand-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Time Zone</h3>
@@ -325,19 +329,19 @@ export default function Contact() {
                   <h3 className="font-semibold text-gray-900 mb-4">What to Expect</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-brand-500 mr-2 flex-shrink-0" />
                       Detailed project analysis
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-brand-500 mr-2 flex-shrink-0" />
                       Strategic recommendations
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-brand-500 mr-2 flex-shrink-0" />
                       Transparent pricing
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-brand-500 mr-2 flex-shrink-0" />
                       Clear timeline & milestones
                     </li>
                   </ul>
@@ -352,9 +356,9 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white rounded-2xl shadow-lg p-8">
+              <div className="premium-card p-8">
                 <div className="flex items-center mb-8">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-brand-600 to-brand-700 rounded-xl flex items-center justify-center mr-4">
                     <MessageSquare className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -377,7 +381,7 @@ export default function Contact() {
                         autoComplete="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
                         placeholder="Your full name"
                       />
                     </div>
@@ -394,7 +398,7 @@ export default function Contact() {
                         autoComplete="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -410,7 +414,7 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
                       placeholder="Your company name"
                     />
                   </div>
@@ -426,21 +430,25 @@ export default function Contact() {
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl text-gray-900 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors"
                       placeholder="Tell me about your project goals, challenges, timeline, and any specific requirements..."
                     />
                   </div>
 
                   {/* Status Messages */}
                   {status.type !== 'idle' && (
-                    <div className={`p-4 rounded-xl flex items-center ${
-                      status.type === 'success' ? 'bg-green-50 text-green-700' :
-                      status.type === 'error' ? 'bg-red-50 text-red-700' :
-                      'bg-blue-50 text-blue-700'
-                    }`}>
-                      {status.type === 'success' && <CheckCircle className="w-5 h-5 mr-2" />}
-                      {status.type === 'error' && <AlertCircle className="w-5 h-5 mr-2" />}
-                      {status.type === 'submitting' && <Loader2 className="w-5 h-5 mr-2 animate-spin" />}
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className={`p-4 rounded-xl flex items-center ${
+                        status.type === 'success' ? 'bg-brand-50 text-brand-700' :
+                        status.type === 'error' ? 'bg-red-50 text-red-700' :
+                        'bg-brand-50 text-brand-700'
+                      }`}
+                    >
+                      {status.type === 'success' && <CheckCircle className="w-5 h-5 mr-2" aria-hidden="true" />}
+                      {status.type === 'error' && <AlertCircle className="w-5 h-5 mr-2" aria-hidden="true" />}
+                      {status.type === 'submitting' && <Loader2 className="w-5 h-5 mr-2 animate-spin" aria-hidden="true" />}
                       {status.message}
                     </div>
                   )}
@@ -448,7 +456,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={status.type === 'submitting'}
-                    className="w-full flex justify-center items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full flex justify-center items-center bg-gradient-to-r from-brand-600 to-brand-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-brand-700 hover:to-brand-800 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {status.type === 'submitting' ? (
                       <>
@@ -465,11 +473,11 @@ export default function Contact() {
 
                   <p className="text-sm text-gray-500 text-center">
                     This form is protected by reCAPTCHA and the Google{' '}
-                    <a href="https://policies.google.com/privacy" className="text-blue-600 hover:underline">
+                    <a href="https://policies.google.com/privacy" className="text-brand-600 hover:underline">
                       Privacy Policy
                     </a>{' '}
                     and{' '}
-                    <a href="https://policies.google.com/terms" className="text-blue-600 hover:underline">
+                    <a href="https://policies.google.com/terms" className="text-brand-600 hover:underline">
                       Terms of Service
                     </a>{' '}
                     apply.

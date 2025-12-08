@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  TrendingUp, 
-  Building2, 
-  BarChart3, 
+import {
+  Building2,
+  BarChart3,
   Users,
-  CheckCircle,
   ArrowRight,
   MapPin,
   Globe
@@ -53,10 +51,10 @@ const challenges = [
 
 export default function ThailandMarketEntry() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       <Head
         title="How to Enter Thailand Market | Complete Market Entry Guide Bangkok 2024"
-        description="Expert guide to entering Thailand market: step-by-step market entry strategy, legal requirements, local partnerships, and digital expansion. Get proven Thailand business expansion advice from Bangkok consultant Will Reynolds."
+        description="Expert Thailand market entry guide: step-by-step strategy, legal requirements, local partnerships & digital expansion. Bangkok consultant advice."
         url="https://developedbywill.com/thailand-market-entry"
         image="/images/thailand-market-entry-og.jpg"
         jsonLd={{
@@ -106,7 +104,7 @@ export default function ThailandMarketEntry() {
       />
       <Navigation />
       
-      <main className="pt-24 pb-20">
+      <main id="main-content" className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Hero Section */}
@@ -118,7 +116,7 @@ export default function ThailandMarketEntry() {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               How to Enter
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              <span className="block premium-gradient-text">
                 Thailand Market
               </span>
             </h1>
@@ -126,9 +124,9 @@ export default function ThailandMarketEntry() {
               Complete guide to Thailand market entry: proven strategies for international businesses 
               expanding into Bangkok and Southeast Asian markets.
             </p>
-            <div className="flex items-center justify-center text-gray-600 mb-8">
-              <MapPin className="w-5 h-5 mr-2" />
-              <span>Updated for 2024 • Bangkok Market Expert</span>
+            <div className="inline-flex items-center px-4 py-2 bg-brand-50 rounded-full text-brand-700 mb-8">
+              <MapPin className="w-4 h-4 mr-2" />
+              <span className="text-sm font-medium">Updated for 2025 • Bangkok Market Expert</span>
             </div>
           </motion.section>
 
@@ -145,7 +143,7 @@ export default function ThailandMarketEntry() {
                 Thailand Market Entry Process
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Step-by-step roadmap to successfully enter and establish your business in Thailand's growing market.
+                Step-by-step roadmap to successfully enter and establish your business in Thailand&apos;s growing market.
               </p>
             </div>
 
@@ -157,21 +155,21 @@ export default function ThailandMarketEntry() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
+                  className="premium-card p-8"
                 >
                   <div className="flex items-start space-x-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                      <div className="w-16 h-16 bg-gradient-to-r from-brand-600 to-brand-700 rounded-xl flex items-center justify-center text-white font-bold text-lg">
                         {index + 1}
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center mb-3">
-                        <step.icon className="w-6 h-6 text-blue-600 mr-3" />
+                        <step.icon className="w-6 h-6 text-brand-600 mr-3" />
                         <h3 className="text-2xl font-bold text-gray-900">
                           {step.title}
                         </h3>
-                        <span className="ml-auto text-sm text-blue-600 font-semibold">
+                        <span className="ml-auto text-sm text-brand-600 font-semibold">
                           {step.timeline}
                         </span>
                       </div>
@@ -193,7 +191,7 @@ export default function ThailandMarketEntry() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 lg:p-12">
+            <div className="bg-gradient-to-br from-gold-50 to-gold-100 rounded-2xl p-8 lg:p-12 border border-gold-200">
               <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
                 Common Thailand Market Entry Challenges
               </h2>
@@ -212,8 +210,8 @@ export default function ThailandMarketEntry() {
                     viewport={{ once: true }}
                     className="flex items-start space-x-3"
                   >
-                    <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div className="w-6 h-6 bg-gold-200 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-gold-600 rounded-full"></div>
                     </div>
                     <p className="text-gray-700">{challenge}</p>
                   </motion.div>
@@ -230,17 +228,17 @@ export default function ThailandMarketEntry() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-12 text-white">
+            <div className="bg-gradient-to-r from-navy-950 to-brand-700 rounded-2xl p-12 text-white">
               <h2 className="text-4xl font-bold mb-6">
                 Ready to Enter Thailand Market?
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Get expert guidance from a Bangkok-based consultant with global experience 
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Get expert guidance from a Bangkok-based consultant with global experience
                 helping international businesses successfully expand into Thailand.
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+                className="inline-flex items-center bg-gold-400 text-navy-950 px-8 py-4 rounded-xl font-semibold hover:bg-gold-300 transition-all duration-300 shadow-lg"
               >
                 Start Your Thailand Expansion
                 <ArrowRight className="ml-2 w-5 h-5" />

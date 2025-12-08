@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm audit:*)",
+      "Bash(curl:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(cat:*)",
+      "Bash(node -e \"require(''''/Users/will/Development/developed-by-will/src/app/contact/page.tsx'''')\")",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

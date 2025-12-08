@@ -4,13 +4,12 @@ import { motion } from "framer-motion";
 import Head from "@/components/Head";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { 
-  TrendingUp, 
-  Building2, 
-  BarChart3, 
-  Code2,
-  MapPin, 
-  Award,
+import {
+  TrendingUp,
+  Building2,
+  BarChart3,
+  Handshake,
+  MapPin,
   Users,
   Target,
   Globe,
@@ -18,7 +17,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-type IconType = 'TrendingUp' | 'Building2' | 'BarChart3' | 'Code2' | 'Target' | 'Globe';
+type IconType = 'TrendingUp' | 'Building2' | 'BarChart3' | 'Handshake' | 'Target' | 'Globe';
 
 interface Expertise {
   category: string;
@@ -29,28 +28,28 @@ interface Expertise {
 
 const expertise: Expertise[] = [
   {
-    category: "Business Development",
+    category: "Market Entry Strategy",
     description: "Strategic growth initiatives and market expansion across Thailand and ASEAN markets",
-    skills: ["Market Entry Strategy", "Partnership Development", "Revenue Growth", "Cross-cultural Stakeholder Engagement", "ASEAN Market Expansion"],
+    skills: ["Thailand Market Entry", "ASEAN Expansion", "Regulatory Navigation", "BOI Incentives", "Market Assessment"],
     icon: "Building2",
   },
   {
-    category: "Marketing Strategy", 
+    category: "Growth & Marketing",
     description: "Data-driven marketing and customer acquisition strategies for competitive markets",
-    skills: ["Customer Acquisition", "Content Marketing", "SEO Strategy", "Social Media Marketing", "Brand Positioning"],
+    skills: ["Customer Acquisition", "Brand Positioning", "Digital Marketing", "Content Strategy", "Market Research"],
     icon: "TrendingUp",
+  },
+  {
+    category: "Partnership Development",
+    description: "Building strategic local partnerships and distribution networks for market success",
+    skills: ["Local Partner Identification", "Joint Ventures", "Distributor Networks", "Stakeholder Engagement", "Relationship Building"],
+    icon: "Handshake",
   },
   {
     category: "Operations Excellence",
     description: "Operational leadership and digital transformation for sustainable business growth",
-    skills: ["Process Optimization", "Digital Transformation", "Analytics Implementation", "Performance Management", "Team Leadership"],
+    skills: ["Process Optimization", "Digital Transformation", "Performance Management", "Team Leadership", "Business Analytics"],
     icon: "BarChart3",
-  },
-  {
-    category: "Technical Implementation",
-    description: "Frontend development skills to support marketing and business initiatives",
-    skills: ["Next.js", "React", "Website Development", "Analytics Setup", "Marketing Technology"],
-    icon: "Code2",
   },
 ];
 
@@ -77,19 +76,19 @@ const achievements = [
 
 export default function About() {
   const iconComponents: Record<IconType, React.ReactElement> = {
-    TrendingUp: <TrendingUp className="w-8 h-8 text-green-600" />,
-    Building2: <Building2 className="w-8 h-8 text-blue-600" />,
-    BarChart3: <BarChart3 className="w-8 h-8 text-purple-600" />,
-    Code2: <Code2 className="w-8 h-8 text-orange-600" />,
-    Target: <Target className="w-8 h-8 text-red-600" />,
-    Globe: <Globe className="w-8 h-8 text-indigo-600" />,
+    TrendingUp: <TrendingUp className="w-8 h-8 text-brand-600" />,
+    Building2: <Building2 className="w-8 h-8 text-brand-600" />,
+    BarChart3: <BarChart3 className="w-8 h-8 text-brand-600" />,
+    Handshake: <Handshake className="w-8 h-8 text-brand-600" />,
+    Target: <Target className="w-8 h-8 text-gold-500" />,
+    Globe: <Globe className="w-8 h-8 text-navy-950" />,
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       <Head
         title="About Will Reynolds | Thailand Business Consultant Bangkok | Global ASEAN Expert"
-        description="Meet Will Reynolds: Leading Thailand business consultant with global experience helping international companies succeed in Bangkok and ASEAN markets. Expert in market entry, cross-cultural business development, and digital transformation."
+        description="Meet Will Reynolds: Thailand business consultant helping international companies succeed in Bangkok and ASEAN. Expert in market entry and digital transformation."
         url="https://developedbywill.com/about"
         image="/images/about-og.jpg"
         jsonLd={{
@@ -154,7 +153,7 @@ export default function About() {
       />
       <Navigation />
       
-      <main className="pt-24 pb-20">
+      <main id="main-content" className="pt-24 pb-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.section 
@@ -171,7 +170,7 @@ export default function About() {
               >
                 <h1 className="text-5xl font-bold text-gray-900 mb-6">
                   Driving Business Growth in
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                  <span className="block premium-gradient-text">
                     Thailand & ASEAN
                   </span>
                 </h1>
@@ -188,7 +187,7 @@ export default function About() {
                 </div>
                 
                 <div className="flex items-center mt-8 pt-6 border-t border-gray-200">
-                  <MapPin className="w-5 h-5 text-blue-600 mr-2" />
+                  <MapPin className="w-5 h-5 text-brand-600 mr-2" />
                   <span className="text-gray-600">Bangkok, Thailand • ASEAN Market Expert</span>
                 </div>
               </motion.div>
@@ -208,7 +207,7 @@ export default function About() {
                     className="object-cover object-[center_40%]"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-600/20 to-transparent" />
                 </div>
               </motion.div>
             </div>
@@ -230,14 +229,14 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                  className="text-center premium-card p-6"
                 >
                   <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-brand-600 to-brand-700 rounded-xl flex items-center justify-center">
                       <achievement.icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
-                  <div className="text-3xl font-bold text-blue-600 mb-2">
+                  <div className="text-3xl font-bold text-brand-600 mb-2">
                     {achievement.number}
                   </div>
                   <div className="text-lg font-semibold text-gray-900 mb-1">
@@ -276,7 +275,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="premium-card p-8"
                 >
                   <div className="flex items-start space-x-6">
                     <div className="flex-shrink-0">
@@ -293,7 +292,7 @@ export default function About() {
                         {area.skills.map((skill, skillIndex) => (
                           <span
                             key={skillIndex}
-                            className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-medium"
                           >
                             {skill}
                           </span>
@@ -314,7 +313,7 @@ export default function About() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
+            <div className="premium-card p-8 lg:p-12">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
                   Current Focus: Digital Business Transformation
@@ -357,35 +356,35 @@ export default function About() {
             viewport={{ once: true }}
             className="mb-20"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 lg:p-12 text-white">
+            <div className="bg-gradient-to-r from-navy-950 to-brand-700 rounded-2xl p-8 lg:p-12 text-white">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                   My Approach
                 </h2>
-                <p className="text-xl lg:text-2xl text-blue-100 mb-8 leading-relaxed">
+                <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
                   &ldquo;Successful business development in Thailand requires deep cultural understanding, strategic patience, and data-driven execution. I combine global business experience with local market expertise to create sustainable competitive advantages.&rdquo;
                 </p>
                 <div className="grid md:grid-cols-3 gap-8 mt-12">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Target className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 bg-gold-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Target className="w-8 h-8 text-gold-400" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Market-Driven</h3>
-                    <p className="text-blue-100">Strategies tailored to Thailand&apos;s unique business environment</p>
+                    <p className="text-gray-300">Strategies tailored to Thailand&apos;s unique business environment</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <BarChart3 className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 bg-gold-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <BarChart3 className="w-8 h-8 text-gold-400" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Data-Driven</h3>
-                    <p className="text-blue-100">Analytics and insights guide every strategic decision</p>
+                    <p className="text-gray-300">Analytics and insights guide every strategic decision</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-8 h-8 text-white" />
+                    <div className="w-16 h-16 bg-gold-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="w-8 h-8 text-gold-400" />
                     </div>
                     <h3 className="text-lg font-semibold mb-2">Relationship-Focused</h3>
-                    <p className="text-blue-100">Building long-term partnerships for sustainable growth</p>
+                    <p className="text-gray-300">Building long-term partnerships for sustainable growth</p>
                   </div>
                 </div>
               </div>
@@ -400,7 +399,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <div className="premium-card p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Ready to Expand in Thailand?
               </h2>
@@ -409,7 +408,7 @@ export default function About() {
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="btn-primary"
               >
                 Start the Conversation
                 <TrendingUp className="ml-2 w-5 h-5" />

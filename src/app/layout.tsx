@@ -15,11 +15,11 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Thailand Business Consultant Bangkok | Will Reynolds | ASEAN Market Expansion Expert",
+    default: "Thailand Business Consultant Bangkok | Will Reynolds",
     template: "%s | Will Reynolds - Thailand Business Expert"
   },
   description:
-    "Thailand business consultant with global experience helping international companies expand in Bangkok and ASEAN markets. Expert in market entry strategy, digital transformation, and cross-cultural business development based in Thailand.",
+    "Thailand business consultant helping international companies expand in Bangkok & ASEAN. Expert in market entry, digital transformation & cross-cultural business development.",
   keywords: [
     "Thailand business consultant Bangkok",
     "ASEAN market expansion expert", 
@@ -91,6 +91,52 @@ export const viewport: Viewport = {
   themeColor: "#209CEE",
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://developedbywill.com/#business",
+  "name": "Developed by Will",
+  "description": "Thailand Business Consulting - Market Entry, Digital Transformation & Strategic Growth",
+  "url": "https://developedbywill.com",
+  "email": "will@developedbywill.com",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://developedbywill.com/#person",
+    "name": "Will Reynolds"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bangkok",
+    "addressCountry": "Thailand"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "13.7563",
+    "longitude": "100.5018"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Thailand"
+    },
+    {
+      "@type": "Place",
+      "name": "ASEAN"
+    }
+  ],
+  "serviceType": [
+    "Business Development Consulting",
+    "Market Entry Strategy",
+    "Digital Transformation",
+    "Marketing Strategy"
+  ],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.linkedin.com/in/reynoldswj/",
+    "https://github.com/ReynoldsWJ55"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -99,6 +145,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://analytics.developedbywill.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema),
+          }}
+        />
         <script
           defer
           data-domain="developedbywill.com"

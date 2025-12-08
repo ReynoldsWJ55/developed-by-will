@@ -42,7 +42,7 @@ interface Project {
 
 // Custom SVG Components
 const VisaIcon = () => (
-  <svg className="w-8 h-8 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg className="w-8 h-8 text-brand-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" role="img" aria-label="Visa services icon">
     <rect x="2" y="6" width="20" height="12" rx="2" ry="2" />
     <path d="M6 10h12" />
     <circle cx="7" cy="14" r="0.5" fill="currentColor"/>
@@ -53,7 +53,7 @@ const VisaIcon = () => (
 );
 
 const CameraIcon = () => (
-  <svg className="w-8 h-8 text-purple-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg className="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" role="img" aria-label="Photography portfolio icon">
     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
     <circle cx="12" cy="13" r="4"/>
     <circle cx="12" cy="13" r="2" fill="currentColor"/>
@@ -61,7 +61,7 @@ const CameraIcon = () => (
 );
 
 const CompassIcon = () => (
-  <svg className="w-8 h-8 text-green-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg className="w-8 h-8 text-gold-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" role="img" aria-label="Travel and exploration icon">
     <circle cx="12" cy="12" r="10"/>
     <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88" fill="currentColor"/>
     <path d="M12 2v4"/>
@@ -82,10 +82,10 @@ const projects: Project[] = [
     icon: <VisaIcon />,
     category: "Development",
     metrics: [
-      { label: "Online Inquiries", value: "+300%", icon: <TrendingUp className="w-4 h-4 text-green-600" /> },
-      { label: "Page Load Speed", value: "1.2s", icon: <Zap className="w-4 h-4 text-yellow-600" /> },
-      { label: "User Engagement", value: "+180%", icon: <Users className="w-4 h-4 text-blue-600" /> },
-      { label: "Mobile Traffic", value: "75%", icon: <Globe className="w-4 h-4 text-purple-600" /> }
+      { label: "Online Inquiries", value: "+300%", icon: <TrendingUp className="w-4 h-4 text-brand-600" /> },
+      { label: "Page Load Speed", value: "1.2s", icon: <Zap className="w-4 h-4 text-gold-500" /> },
+      { label: "User Engagement", value: "+180%", icon: <Users className="w-4 h-4 text-brand-600" /> },
+      { label: "Mobile Traffic", value: "75%", icon: <Globe className="w-4 h-4 text-navy-600" /> }
     ],
     marketingStrategies: [
       { strategy: "Thai & English SEO Strategy", result: "Improved visibility for key visa service terms in both languages" },
@@ -104,10 +104,10 @@ const projects: Project[] = [
     icon: <CameraIcon />,
     category: "Development",
     metrics: [
-      { label: "Load Time", value: "50% faster", icon: <Zap className="w-4 h-4 text-yellow-600" /> },
-      { label: "Image Optimization", value: "75% reduction", icon: <BarChart3 className="w-4 h-4 text-blue-600" /> },
-      { label: "Mobile Performance", value: "95/100", icon: <Award className="w-4 h-4 text-gold-600" /> },
-      { label: "Bounce Rate", value: "-40%", icon: <TrendingUp className="w-4 h-4 text-green-600" /> }
+      { label: "Load Time", value: "50% faster", icon: <Zap className="w-4 h-4 text-gold-500" /> },
+      { label: "Image Optimization", value: "75% reduction", icon: <BarChart3 className="w-4 h-4 text-brand-600" /> },
+      { label: "Mobile Performance", value: "95/100", icon: <Award className="w-4 h-4 text-gold-500" /> },
+      { label: "Bounce Rate", value: "-40%", icon: <TrendingUp className="w-4 h-4 text-brand-600" /> }
     ],
     marketingStrategies: [
       { strategy: "Visual SEO Optimization", result: "Images optimized for search visibility and performance" },
@@ -125,8 +125,8 @@ const projects: Project[] = [
     icon: <CompassIcon />,
     category: "Marketing",
     metrics: [
-      { label: "Content Growth", value: "+200%", icon: <TrendingUp className="w-4 h-4 text-green-600" /> },
-      { label: "Destination Guides", value: "50+ articles", icon: <MapPin className="w-4 h-4 text-blue-600" /> }
+      { label: "Content Growth", value: "+200%", icon: <TrendingUp className="w-4 h-4 text-brand-600" /> },
+      { label: "Destination Guides", value: "50+ articles", icon: <MapPin className="w-4 h-4 text-gold-500" /> }
     ],
     marketingStrategies: [
       { strategy: "Long-tail Keyword Research", result: "Identified underserved content opportunities in Thailand travel" },
@@ -141,10 +141,10 @@ const categories = ["All", "Development", "Marketing", "Business"] as const;
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-white">
       <Head
         title="Thailand Business Consulting Case Studies | Will Reynolds Portfolio Bangkok"
-        description="Proven Thailand business expansion results: 300% growth for V Goal Visa Service, high-performance WJR Visuals portfolio, Thailand Wanderer content strategy. Real market entry success stories in Bangkok and ASEAN."
+        description="Thailand business case studies: 300% growth for V Goal Visa, WJR Visuals portfolio, Thailand Wanderer content strategy. Real market entry success in Bangkok."
         url="https://developedbywill.com/projects"
         image="/images/projects-og.jpg"
         jsonLd={{
@@ -221,7 +221,7 @@ export default function Projects() {
       />
       <Navigation />
       
-      <main className="pt-24 pb-20">
+      <main id="main-content" className="pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <motion.div
@@ -232,7 +232,7 @@ export default function Projects() {
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Success Stories
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              <span className="block premium-gradient-text">
                 That Drive Growth
               </span>
             </h1>
@@ -251,7 +251,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden"
+                className="premium-card rounded-3xl overflow-hidden"
               >
                 <div className="grid lg:grid-cols-2 gap-8">
                   {/* Left Column - Project Info */}
@@ -265,9 +265,9 @@ export default function Projects() {
                           {project.title}
                         </h2>
                         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          project.category === 'Development' ? 'bg-blue-100 text-blue-700' :
-                          project.category === 'Marketing' ? 'bg-green-100 text-green-700' :
-                          'bg-purple-100 text-purple-700'
+                          project.category === 'Development' ? 'bg-brand-100 text-brand-700' :
+                          project.category === 'Marketing' ? 'bg-gold-100 text-gold-700' :
+                          'bg-navy-100 text-navy-700'
                         }`}>
                           {project.category}
                         </span>
@@ -295,7 +295,7 @@ export default function Projects() {
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-gradient-to-r from-brand-600 to-brand-700 text-white rounded-full text-sm font-medium"
                         >
                           {tag}
                         </span>
@@ -307,7 +307,7 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="btn-primary px-6 py-3"
                     >
                       View Live Project
                       <ExternalLink className="ml-2 w-5 h-5" />
@@ -315,7 +315,7 @@ export default function Projects() {
                   </div>
 
                   {/* Right Column - Metrics & Strategies */}
-                  <div className="bg-gradient-to-br from-gray-50 to-blue-50 p-8 lg:p-12">
+                  <div className="bg-gradient-to-br from-gray-50 to-brand-50 p-8 lg:p-12">
                     {/* Metrics */}
                     <div className="mb-10">
                       <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Results</h3>
@@ -372,17 +372,17 @@ export default function Projects() {
             viewport={{ once: true }}
             className="text-center mt-20"
           >
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white">
+            <div className="bg-gradient-to-r from-navy-950 to-brand-700 rounded-3xl p-12 text-white">
               <h2 className="text-4xl font-bold mb-6">
                 Ready for Your Success Story?
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Let&apos;s create a project that combines technical excellence with strategic marketing 
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let&apos;s create a project that combines technical excellence with strategic marketing
                 to drive real business growth.
               </p>
               <a
                 href="/contact"
-                className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+                className="inline-flex items-center bg-gold-400 text-navy-950 px-8 py-4 rounded-xl font-semibold hover:bg-gold-300 transition-all duration-300 shadow-lg"
               >
                 Start Your Project
                 <TrendingUp className="ml-2 w-5 h-5" />
